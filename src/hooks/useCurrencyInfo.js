@@ -4,7 +4,7 @@ function useCurrencyinfo(currency){
     const [data, setData] = useState({}); // passing an empty obj so that iff fetch call is not coming then atleat it wont cras(a contingrncy plan)
     useEffect(()=>{
         
-        fetch( `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${currency}.json`)
+        fetch( `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@2024-03-06/v1/currencies/${currency}.json`)
         .then((res)=>res.json()) //now we need to store this json data somewhere so we need a var
         .then((res)=> setData(res[currency])) // why currency : observe the response that we get from the api and analyse
         .catch((err) => console.error('Error fetching currency data:', err)); // Handle errors
